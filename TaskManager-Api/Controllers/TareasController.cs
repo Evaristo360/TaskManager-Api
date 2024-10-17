@@ -59,6 +59,7 @@ namespace TaskManager_Api.Controllers
             {
                 return BadRequest(ModelState);
             }
+            tarea.FechaCreacion = DateTime.Now;
             _repository.AddTarea(tarea);
             return CreatedAtAction(nameof(GetTareaById), new { id = tarea.Id }, tarea);
         }
